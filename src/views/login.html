@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link href="./assets/css/webflow.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <section class="section_big">
+        <div class="modal w-form">
+            <form id="signup-form" class="form">
+                <div class="modal-top">
+                    <h1 class="h1">Iniciar Sesión</h1>
+                    <div class="spacer-20"></div>
+                    <input class="input w-input" maxlength="256" name="email" placeholder="Email" type="email" id="email" required />
+                    <input class="input w-input" maxlength="256" name="password" placeholder="Contraseña" type="password" id="password" required />
+                </div>
+                <div class="modal-bottom">
+                    <input type="submit" data-wait="Please wait..." class="button w-button" value="Continuar" />
+                </div>
+                <div class="modal-bottom is-centered">
+                    <button type="button" class="dark" id="forgot-password-button">Olvidé mi contraseña →</button>
+                </div>
+            </form>
+        </div>
+        <!-- Modal de mensaje de error -->
+        <div id="message-modal" class="modal-hidden">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <p id="modal-message"></p>
+            </div>
+        </div>
+    </section>
+    <script src="./assets/js/webflow.js"></script>
+    <script src="./assets/js/redirect.js"></script>
+    <script>
+        document.getElementById('forgot-password-button').addEventListener('click', function() {
+            window.location.href = '/reset-password.html';
+        });
+    </script>
+</body>
+
+</html>
